@@ -1,3 +1,9 @@
+         ;basic loader
+         *= $0801
+         .byte $0c,$08,$0a,$00,$9e,$20
+         .byte $34,$30,$39,$36
+         .byte $00,$00,$00
+ 
          *= $1000
 prtchr   = $ffd2
  
@@ -31,7 +37,9 @@ prtchr   = $ffd2
          sta $d412
  
          ldy #0
-loop     cpy #40
+ 
+loop
+         cpy #40
          bne strev
          ldy #0
          ldx revctl
@@ -85,3 +93,4 @@ rand     lda $d41b
  
 revctl   .byte 0
 rndz     .byte 0
+
