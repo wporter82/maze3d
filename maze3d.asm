@@ -78,11 +78,9 @@ print    jsr prtchr
          iny
          jmp loop
  
-         ;get random number
+         ;get random number 0 or 1
 rand     lda $d41b
-         cmp #$02
-         bcs rand
-         adc #$00
+         and #1
          rts
  
 revctl   .byte 0
